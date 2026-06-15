@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Скачать приложение</title>
+
+    <script>
+        window.onload = function () {
+            const ua = navigator.userAgent;
+
+            const appStore =
+                "https://apps.apple.com/ru/app/1cb-kz/id1571443906";
+
+            const googlePlay =
+                "https://play.google.com/store/apps/details?id=kz.fcbk.android";
+
+            const appGallery =
+                "https://appgallery.huawei.com/app/C110304717?sharePrepath=ag&locale=ru_RU&source=appshare&subsource=C110304717&shareTo=com.android.bluetooth&shareFrom=appmarket&shareIds=ac31248604df4868baf94a76e2aff6f9_com.android.bluetooth&callType=SHARE";
+
+            if (/iPhone|iPad|iPod/i.test(ua)) {
+                window.location.replace(appStore);
+            } else if (
+                /Huawei|HONOR/i.test(ua)
+            ) {
+                window.location.replace(appGallery);
+            } else {
+                window.location.replace(googlePlay);
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Перенаправление...</p>
+</body>
+</html>
